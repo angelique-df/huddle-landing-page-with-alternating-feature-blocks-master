@@ -1,4 +1,17 @@
+html{
+    font-family: sans-serif;
+}
 img{
     max-width: 100%;
     height: auto;
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+section.hero{
+    background-image: url('./images/bg-hero-mobile.svg');
 }
