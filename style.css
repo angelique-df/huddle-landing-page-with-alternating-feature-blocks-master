@@ -58,7 +58,6 @@ header nav a{
     background-image: url('./images/bg-hero-mobile.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
     background-color: aliceblue;
 }
 .hero-content{
@@ -68,12 +67,12 @@ header nav a{
 .hero-content p{
     color: #07282f;
     line-height: 1.5em;
-    font-size: larger;
+    font-size: large;
 }
 div.features{
     padding: 4em 1em 0 1em;
 }
-div.card,
+div.cta-bottom-card,
 .btn{
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -81,7 +80,7 @@ article{
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
 }
 article,
-div.card{
+div.cta-bottom-card{
     border-radius: 1em;
 }
 article{
@@ -96,7 +95,7 @@ article p{
     line-height: 1.4em;
     color: #808791;
 }
-div.card h2{
+div.cta-bottom-card h2{
     font-size: 1.2em;
 }
 div.card a{
@@ -191,11 +190,57 @@ ul.site-pages-list li{
     color: hsl(228, 45%, 44%);
 }
 @media only screen and (min-width: 1024px) {
+    html{
+        font-size: 20px;
+    }
+    header{
+        padding: 1em 6em;
+    }
+    section.hero{
+        min-height: auto;
+        padding: 1em 6em;
+    }
     .hero-content{
         display: flex;
+        justify-content: space-between;
+        padding: 1em 6em;
+    }
+    .hero-content > div{
+        flex-basis: 40%;
+        text-align: left;
+        /* padding: 5em 3em 0px 0px; */
+        padding-top: 3em;
+    }
+    .hero-content > img{
+        /* chrome bug */
+        max-width: 50%;
+        flex-basis: 50%;
+    }
+    article{
+        width: 82%;
+        /* margin: 0 auto; */
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+    article:nth-child(odd){
+        flex-direction: row-reverse;
+    }
+    article > div{
+        text-align: left;
+        padding: 0em 8em;
+    }
+    article > img{
+        /* chrome bug */
+        max-width: 30%;
+    }
+    div.cta-bottom-card{
+        width: 50%;
+        font-size: 1.4em;
     }
     footer {
-        padding: 12em 6em 1em 6em;
+        padding: 10em 6em 1em 6em;
     }
     footer > div{
         display: flex;
