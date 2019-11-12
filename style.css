@@ -138,24 +138,18 @@ ul.contact-info{
 .e-mail-address{
     padding: 0 0.5em;
 }
-.address::marker,
-.phone-number::marker,
-.e-mail-address::marker{
-    content: url('./images/icon-location.svg');
-    display: inline-block;
-    width: 4em;
-    color: white !important;
-    filter: brightness(0) invert(1);
-}
-.phone-number::marker{
-    content: url('./images/icon-phone.svg');
-}
-.e-mail-address::marker{
-    content: url('./images/icon-email.svg');
-}
 ul.contact-info li{
     margin: 1em auto;
     font-style: normal;
+}
+ul.contact-info li:nth-child(1){
+    list-style-image: url(./images/icon-location.svg);
+}
+ul.contact-info li:nth-child(2){
+    list-style-image: url(./images/icon-phone.svg);
+}
+ul.contact-info li:nth-child(3){
+    list-style-image: url(./images/icon-email.svg);
 }
 ul.site-pages-list{
     padding-left: 0;
