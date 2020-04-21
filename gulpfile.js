@@ -2,7 +2,6 @@
 const gulp = require('gulp')
 //replace file paths in html and css
 var replace = require('gulp-replace');
-
 //minify html
 const htmlmin = require('gulp-htmlmin');
 //convert sass to css
@@ -17,11 +16,19 @@ var cssnano = require('cssnano');
 var rename = require('gulp-rename');
 //live reload
 const browserSync = require('browser-sync').create();
+//compress images
+const imagemin = require('gulp-imagemin');
 
+function img() {
+    return gulp.src('./src/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'))
+        .pipe(browserSync.stream());
+}
 function html() {
     return gulp.src('./src/index.html')
         //replace file paths in html
-        .pipe(replace('./images/', './src/images/'))
+        .pipe(replace('./images/', './dist/images/'))
         .pipe(replace('./css/style.css', './dist/css/style.min.css'))
         //minify html
         .pipe(htmlmin({ collapseWhitespace: true }))
@@ -61,5 +68,6 @@ function watch() {
     gulp.watch('src/scss/**/*.scss').on('change', browserSync.reload);
 }
 exports.html = html;
+exports.img = img;
 exports.style = style;
 exports.watch = watch;
