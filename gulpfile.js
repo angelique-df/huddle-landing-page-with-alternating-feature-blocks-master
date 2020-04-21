@@ -1,7 +1,8 @@
 //gulp
 const gulp = require('gulp')
-//replace file paths in html
-const htmlreplace = require('gulp-html-replace');
+//replace file paths in html and css
+var replace = require('gulp-replace');
+
 //minify html
 const htmlmin = require('gulp-htmlmin');
 //convert sass to css
@@ -20,17 +21,11 @@ const browserSync = require('browser-sync').create();
 function html() {
     return gulp.src('./src/index.html')
         //replace file paths in html
-        .pipe(htmlreplace({
-            'css': 'style.min.css',
-            'js': 'script.min.js'
-        },
-            {
-                keepBlockTags: false,
-            }
-        ))
+        .pipe(replace('./images/', './src/images/'))
+        .pipe(replace('./css/style.css', './dist/css/style.min.css'))
         //minify html
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./'))
         .pipe(browserSync.stream());
 }
 function style() {
@@ -39,10 +34,9 @@ function style() {
         autoprefixer(),
         cssnano()
     ];
-
     return gulp.src('./src/scss/style.scss')
+        .pipe(replace('./../images/', './../../src/images/'))
         .pipe(sass()) // Converts Sass to CSS with gulp-sass
-        .pipe(gulp.dest('./src/css/'))
         //parse CSS once
         //autoprefixer
         //optimization
