@@ -1,0 +1,31 @@
+{
+	"name": "huddle-landing-page-with-alternating-feature-blocks-master",
+	"version": "1.0.0",
+	"description": "![Design preview for the Huddle landing page with alternating feature blocks coding challenge](./design/desktop-preview.jpg)",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/angelique-df/huddle-landing-page-with-alternating-feature-blocks-master.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/angelique-df/huddle-landing-page-with-alternating-feature-blocks-master/issues"
+	},
+	"devDependencies": {
+		"autoprefixer": "^9.7.6",
+		"browser-sync": "^2.26.7",
+		"cssnano": "^4.1.10",
+		"gulp": "^4.0.2",
+		"gulp-html-replace": "^1.6.2",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-postcss": "^8.0.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-uglify": "^3.0.2"
+	},
+	"homepage": "https://github.com/angelique-df/huddle-landing-page-with-alternating-feature-blocks-master#readme"
+}
